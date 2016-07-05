@@ -78,6 +78,13 @@
         "description": "Subnet 1 "
       }
     },
+    "subnet1Name": {
+      "type": "string",
+      "defaultValue": "Subnet1",
+      "metadata": {
+        "description": "Subnet 1 Name"
+      }
+    },
     "subnet2": {
       "type": "string",
       "defaultValue": "10.0.1.0/24",
@@ -85,16 +92,23 @@
         "description": "Subnet 2 "
       }
     },
+    "subnet2Name": {
+      "type": "string",
+      "defaultValue": "Subnet2",
+      "metadata": {
+        "description": "Subnet 2 Name"
+      }
+    },
 	"templateurl" {
 		"type": "string",
-		"defaultValue": "https://raw.githubusercontent.com/mischi3f/prestaging/master/",
+		"defaultValue": "https://raw.githubusercontent.com/brendanacts/training/master",
 		"metadata": {
 			"description": "Enter the Github URL"
 		}
 	}
     },
     "variables": {
-	"apiVersion": "2015-06-15",
+	"apiVersion": "2016-06-30",
 	"networkname": "[concat(parameters('NamePrefix'),'-VNET')]",
 	"vnetdeploy": "vnetdeploy",
 	"vmdeploy": "vmdeploy",
@@ -136,6 +150,8 @@
           "NamePrefix": { "value": "[parameters('NamePrefix')]" },
           "dnsLabelPrefix": { "value": "[parameters('dnsLabelPrefix')]" },
 		  "VMSize": { "value": "[parameters('VMSize')]" },
+		  "nnnnn": { "value": "[parameters('subnet')]" },
+		  "nnnnn": { "value": "[parameters('nnnnnn')]" },
 		  "nnnnn": { "value": "[parameters('nnnnnn')]" }
         }
       }
