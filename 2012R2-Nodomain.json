@@ -34,10 +34,10 @@
       },
       "defaultValue": "Standard_D1"
     },
-    "subnet": {
+    "SubnetName": {
       "type": "string",
       "metadata": {
-        "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
+        "description": "Subnet needed to connect vitual machine"
       }
     },
     "windowsOSVersion": {
@@ -60,18 +60,16 @@
     "imagePublisher": "MicrosoftWindowsServer",
     "imageOffer": "WindowsServer",
     "OSDiskName": "[concat(tolower(parameters('NamePrefix')),'osdisk')]",
-    "nicName": "[concat(parameters('NamePrefix'),'nic')]",
-    "subnetName": "Subnet1",
-    "subnet1": "10.0.0.0/24",
+    "nicName": "[concat(parameters('NamePrefix'),'-nic')]",
 	"storageAccountType": "Standard_LRS",
-    "publicIPAddressName": "[concat(parameters('NamePrefix'),'PIP')]",
+    "publicIPAddressName": "[concat(parameters('NamePrefix'),'-PIP')]",
     "publicIPAddressType": "Dynamic",
     "vmStorageAccountContainerName": "vhds",
     "vmName": "[concat(parameters('NamePrefix'),'-VM1')]",
-    "virtualNetworkName": "[concat(toupper(parameters('NamePrefix')),'VNET')]",
+    "virtualNetworkName": "[concat(toupper(parameters('NamePrefix')),'-VNET')]",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
-    "subnetRef": "[concat(variables('vnetID'),'/subnets/',variables('subnetName'))]",
-    "apiVersion": "2015-06-15"
+    "subnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('subnetName'))]",
+    "apiVersion": "2016-03-30"
   },
   "resources": [
     {
