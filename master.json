@@ -101,7 +101,7 @@
     },
 	"templateurl" {
 		"type": "string",
-		"defaultValue": "https://raw.githubusercontent.com/brendanacts/training/master",
+		"defaultValue": "https://raw.githubusercontent.com/brendanacts/training/master/",
 		"metadata": {
 			"description": "Enter the Github URL"
 		}
@@ -138,6 +138,9 @@
 		"name": "[variables('vmdeploy')]",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "[variables('apiVersion')]",
+      "dependsOn": [
+        "[concat('Microsoft.Resources/deployments/', variables('vnetdeploy'))]"
+		]
       "properties": {
         "mode": "Incremental",
         "templateLink": {
@@ -150,7 +153,7 @@
           "NamePrefix": { "value": "[parameters('NamePrefix')]" },
           "dnsLabelPrefix": { "value": "[parameters('dnsLabelPrefix')]" },
 		  "VMSize": { "value": "[parameters('VMSize')]" },
-		  "nnnnn": { "value": "[parameters('subnet')]" },
+		  "subnetname": { "value": "[parameters('subnet1Name')]" },
 		  "nnnnn": { "value": "[parameters('nnnnnn')]" },
 		  "nnnnn": { "value": "[parameters('nnnnnn')]" }
         }
