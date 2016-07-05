@@ -99,7 +99,7 @@
         "description": "Subnet 2 Name"
       }
     },
-	"templateurl" {
+	"templateurl": {
 		"type": "string",
 		"defaultValue": "https://raw.githubusercontent.com/brendanacts/training/master/",
 		"metadata": {
@@ -140,7 +140,7 @@
       "apiVersion": "[variables('apiVersion')]",
       "dependsOn": [
         "[concat('Microsoft.Resources/deployments/', variables('vnetdeploy'))]"
-		]
+		],
       "properties": {
         "mode": "Incremental",
         "templateLink": {
@@ -154,8 +154,7 @@
           "dnsLabelPrefix": { "value": "[parameters('dnsLabelPrefix')]" },
 		  "VMSize": { "value": "[parameters('VMSize')]" },
 		  "subnetname": { "value": "[parameters('subnet1Name')]" },
-		  "nnnnn": { "value": "[parameters('nnnnnn')]" },
-		  "nnnnn": { "value": "[parameters('nnnnnn')]" }
+		  "windowsOSVersion": { "value": "[parameters('windowsOSVersion')]" }
         }
       }
 	}
