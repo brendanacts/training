@@ -66,7 +66,7 @@
     "publicIPAddressType": "Dynamic",
     "vmStorageAccountContainerName": "vhds",
     "vmName": "[concat(parameters('NamePrefix'),'-VM1')]",
-    "virtualNetworkName": "[concat(toupper(parameters('NamePrefix')),'-VNET')]",
+    "virtualNetworkName": "somethingtotest12345",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
     "subnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('subnetName'))]",
     "apiVersion": "2016-06-010"
