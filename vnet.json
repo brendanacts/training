@@ -46,14 +46,15 @@
     }
   },
   "variables": {
-    "apiVersion": "2016-06-30"
+    "apiVersion": "2016-06-30",
+	"location": "East US 2"
   },
   "resources": [
     {
       "apiVersion": "[variables('apiVersion')]",
       "type": "Microsoft.Network/virtualNetworks",
       "name": "[parameters('vnetName')]",
-      "location": "[resourceGroup().location]",
+      "location": "[variables('location')]",
       "properties": {
         "addressSpace": {
           "addresses": [
