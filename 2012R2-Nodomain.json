@@ -40,6 +40,12 @@
         "description": "Subnet needed to connect vitual machine"
       }
     },
+	"vnetID": {
+		"type": "string",
+		"metadata": {
+			"description": "From Master JSON Vnet ID"
+		}
+	},
     "windowsOSVersion": {
       "type": "string",
       "defaultValue": "2012-R2-Datacenter",
@@ -66,7 +72,7 @@
     "publicIPAddressType": "Dynamic",
     "vmStorageAccountContainerName": "vhds",
     "vmName": "[concat(parameters('NamePrefix'),'-VM1')]",
-    "virtualNetworkName": "somethingtotest12345",
+    "virtualNetworkName": "[concat(toupper(parameters('NamePrefix')),'-VNET')]",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
     "subnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('subnetName'))]",
     "apiVersion": "2016-06-010"
