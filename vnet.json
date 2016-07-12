@@ -9,6 +9,7 @@
         "description": "VNet name"
       }
     },
+	
     "vnetAddress": {
       "type": "string",
       "defaultValue": "10.0.0.0/16",
@@ -16,6 +17,7 @@
         "description": "Address "
       }
     },
+	
     "subnet1": {
       "type": "string",
       "defaultValue": "10.0.0.0/24",
@@ -23,6 +25,7 @@
         "description": "Subnet 1"
       }
     },
+	
     "subnet1Name": {
       "type": "string",
       "defaultValue": "Subnet1",
@@ -30,6 +33,7 @@
         "description": "Subnet 1 Name"
       }
     },
+	
     "subnet2": {
       "type": "string",
       "defaultValue": "10.0.1.0/24",
@@ -37,6 +41,7 @@
         "description": "Subnet 2"
       }
     },
+	
     "subnet2Name": {
       "type": "string",
       "defaultValue": "Subnet2",
@@ -46,7 +51,7 @@
     }
   },
   "variables": {
-    "apiVersion": "2016-06-01",
+    "apiVersion": "2015-06-15",
 	"location": "East US 2"
   },
   "resources": [
@@ -57,7 +62,7 @@
       "location": "[variables('location')]",
       "properties": {
         "addressSpace": {
-          "addresses": [
+          "addressPrefixes": [
             "[parameters('vnetAddress')]"
           ]
         },
@@ -65,13 +70,13 @@
           {
             "name": "[parameters('subnet1Name')]",
             "properties": {
-              "address": "[parameters('subnet1')]"
+              "addressPrefix": "[parameters('subnet1')]"
             }
           },
           {
             "name": "[parameters('subnet2Name')]",
             "properties": {
-              "address": "[parameters('subnet2')]"
+              "addressPrefix": "[parameters('subnet2')]"
             }
           }
         ]
